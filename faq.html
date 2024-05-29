@@ -13,12 +13,15 @@
 <body class="faqbody">
 
     <nav>
-        <span class="name">SPACETRAVEL</span>
-        <a href="index.html">Accueil</a>
-        <a href="#destination">Les destinations</a>
-        <a href="#reservation">Réserver</a>
-        <a href="#apropos">A propos de nous</a>
-        <a href="#contacts">Contacts</a>
+        <span class="name"><a href="index.php">SPACETRAVEL</a></span>
+        <a href="index.php">Accueil</a>
+        <a href="destinations.php">Les destinations</a>
+        <a href="#">À propos de nous</a>
+        <a href="#">Contacts</a>
+        <form action="destinations.php" method="GET" class="search-form">
+        <input type="text" name="search" placeholder="Rechercher une destination...">
+        <button type="submit">Rechercher</button>
+    </form>
     </nav>
 
     <main>
