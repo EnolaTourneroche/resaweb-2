@@ -41,8 +41,7 @@ $destinations = $query->fetchAll(PDO::FETCH_ASSOC);
         <span class="name"><a href="index.php">SPACETRAVEL</a></span>
         <a href="index.php">Accueil</a>
         <a href="destinations.php">Les destinations</a>
-        <a href="#">À propos de nous</a>
-        <a href="#">Contacts</a>
+        <a href="apropos.html">À propos de nous</a>
         <form action="destinations.php" method="GET" class="search-form">
         <input type="text" name="search" placeholder="Rechercher une destination...">
         <button type="submit">Rechercher</button>
@@ -52,7 +51,7 @@ $destinations = $query->fetchAll(PDO::FETCH_ASSOC);
     <div class="container">
     <main>
         <div class="destinationpage">
-            <h3>Nos Destinations</h3>
+            <h1>Nos Destinations</h1>
             <div class="filtersprice">
                 <button id="ascButton">Prix Croissant</button>
                 <button id="descButton">Prix Décroissant</button>
@@ -61,15 +60,15 @@ $destinations = $query->fetchAll(PDO::FETCH_ASSOC);
 
         <!-- Liste des destinations -->
         <section class="destinations-container">
-            <div class="card-container" id="cardContainer">
+            <div class="planete-container" id="planetecontainer">
                 <?php
                 if (empty($destinations)) {
                     echo '<p>Aucune destination trouvée.</p>';
                 } else {
                 foreach ($destinations as $destination) {
-                    echo '<div class="card">';
+                    echo '<div class="planete">';
                     echo '<img src="images/' . $destination['image'] . '" alt="' . $destination['nom_article'] . '">';
-                    echo '<h4>' . $destination['nom_article'] . '</h4>';
+                    echo '<h2>' . $destination['nom_article'] . '</h2>';
                     echo '<p>' . $destination['prix'] . '€</p>';
                     echo '<a href="article.php?id=' . $destination['article_ID'] . '" class="button">Détails</a>';
                     echo '</div>';

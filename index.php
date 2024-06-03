@@ -21,6 +21,17 @@ include 'connexion.php';
 
 <body>
 
+    <nav>
+        <span class="name"><a href="index.php">SPACETRAVEL</a></span>
+        <a href="index.php">Accueil</a>
+        <a href="destinations.php">Les destinations</a>
+        <a href="apropos.html">À propos de nous</a>
+        <form action="destinations.php" method="GET" class="search-form">
+        <input type="text" name="search" placeholder="Rechercher une destination...">
+        <button type="submit">Rechercher</button>
+    </form>
+    </nav>
+
     <header>
         <div class="text">
             <h1>SPATIAL TRAVEL</h1>
@@ -28,21 +39,10 @@ include 'connexion.php';
         </div>
     </header>
 
-    <nav>
-        <span class="name"><a href="index.php">SPACETRAVEL</a></span>
-        <a href="index.php">Accueil</a>
-        <a href="destinations.php">Les destinations</a>
-        <a href="#">À propos de nous</a>
-        <a href="#">Contacts</a>
-        <form action="destinations.php" method="GET" class="search-form">
-        <input type="text" name="search" placeholder="Rechercher une destination...">
-        <button type="submit">Rechercher</button>
-    </form>
-    </nav>
-
     <main>
         <div class="presentation">
             <h3>Visitez tous les recoins de notre système solaire !</h3>
+            <br class="espace">
             <p>
                 Spatial Travel est la seule agence de voyage à vous proposer des destinations hors de la Terre ! Avec
                 nous vous pourrez observer au plus près les planètes de notre système solaire mais vous pourrez aussi

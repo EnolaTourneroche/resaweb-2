@@ -32,8 +32,7 @@ $nb_personne = htmlspecialchars($_GET['nb_personne']);
         <span class="name"><a href="index.php">SPACETRAVEL</a></span>
         <a href="index.php">Accueil</a>
         <a href="destinations.php">Les destinations</a>
-        <a href="#">À propos de nous</a>
-        <a href="#">Contacts</a>
+        <a href="apropos.html">À propos de nous</a>
         <form action="destinations.php" method="GET" class="search-form">
         <input type="text" name="search" placeholder="Rechercher une destination...">
         <button type="submit">Rechercher</button>

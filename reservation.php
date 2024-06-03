@@ -76,8 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <span class="name"><a href="index.php">SPACETRAVEL</a></span>
         <a href="index.php">Accueil</a>
         <a href="destinations.php">Les destinations</a>
-        <a href="#">À propos de nous</a>
-        <a href="#">Contacts</a>
+        <a href="apropos.html">À propos de nous</a>
         <form action="destinations.php" method="GET" class="search-form">
         <input type="text" name="search" placeholder="Rechercher une destination...">
         <button type="submit">Rechercher</button>
@@ -87,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <main>
         <div class="reservation-page">
         <div class="reservation-container">
-            <h3>Réserver: <?php echo htmlspecialchars($article['nom_article']); ?></h3>
+            <h2>Réserver: <?php echo htmlspecialchars($article['nom_article']); ?></h2>
             <form action="reservation.php?id=<?php echo $articleId; ?>" method="POST">
             <span id="prix"><?php echo htmlspecialchars($article['prix']); ?></span>
                 <label for="nom">Nom:</label>

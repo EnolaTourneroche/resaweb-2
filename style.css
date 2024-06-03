@@ -29,26 +29,8 @@ body {
     font-size: 1.5rem;
 }
 
-button, .button, button:hover, .button:hover{
-    background-color: #000;
-    color: #fff;
-    border: 2px solid #fff;
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-family: 'Comfortaa', sans-serif;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-
-.article-info a{
-    text-decoration: none;
-    text-align: center;
-}
-
-button:hover, .button:hover{
-    background-color: #fff;
-    color: #000;
+.espace {
+    height : 10px
 }
 
 /*Je design ma barre menu en appelant l'html que j'ai créé pour ça avec son id navbar*/
@@ -77,18 +59,6 @@ nav input{
     font-size: 0.8rem;
 }
 
-.name {
-    margin-right: auto;
-    font-weight: 800;
-    font-size: 2rem;
-    color: #fff;
-    font-family: 'Audiowide', sans-serif;
-}
-
-.name a {
-    z-index: 99999999;
-}
-
 nav a {
     float: left;
     display: block;
@@ -97,6 +67,18 @@ nav a {
     padding: 14px 16px;
     text-decoration: none;
     font-family: 'Audiowide', sans-serif;
+    font-size: 1.2rem
+}
+
+.name {
+    margin-right: auto;
+    font-weight: 800;
+    color: #fff;
+    font-family: 'Audiowide', sans-serif;
+}
+
+.name a {
+    font-size: 2rem;
 }
 
 a:hover {
@@ -112,10 +94,10 @@ header{
 }
 
 .text{
-    background-image: url(Images/saturne.gif);
+    background-image: url(Images/background1.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 600px;
+    background-size: 57rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -123,6 +105,15 @@ header{
     height: 100%; 
     font-family: 'Audiowide', sans-serif;
     z-index: 1;
+    margin-top: 2.6rem;
+}
+
+.text h1, h2 {
+    text-shadow: 
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px  1px 0 #000,
+    1px  1px 0 #000; 
 }
 
 main{
@@ -183,7 +174,7 @@ footer a {
 
 .donnees_persos ul {
     list-style-position: inside; /* Pour que les points soient au centre */
-    /* list-style-type: none; Enlève le commentaire si tu veux supprimer les points */
+    list-style-type: none; 
 }
 
 /* PAGE DE LA FAQ */
@@ -201,6 +192,7 @@ details {
     justify-content: center;
     align-items: center;
     gap: 3rem;
+    margin-bottom: 2rem;
 }
 
 .container {
@@ -248,6 +240,8 @@ details[open] .open{
     text-align: center;
 }
 
+/* SLIDER DE LA PAGE D'ACCUEIL  */
+
 .destinations-carousel{
     width: 90%;
     display: flex;
@@ -283,7 +277,6 @@ details[open] .open{
     border-radius: 10px;
 }
 
-
 .navigation{
     margin-top: 20px;
 }
@@ -298,12 +291,12 @@ details[open] .open{
     z-index: -1;
   }
 
-.card {
-    width: 300px; /* Définissez la largeur fixe des cartes */
-    border: 1px solid #ffffff; /* Ajoutez une bordure */
-    border-radius: 10px; /* Arrondissez les coins */
-    padding: 20px; /* Ajoutez un espace à l'intérieur des cartes */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajoutez une ombre */
+/* PAGE DES DESTINATIONS */
+
+.planete {
+    width: 350px; 
+    border: none; 
+    padding: 20px; 
     color: white;
     display: flex;
     flex-direction: column;
@@ -311,12 +304,12 @@ details[open] .open{
     text-align: center;
 }
 
-.card a{
+.planete a{
     text-decoration: none;
     color: white;
 }
 
-.card-container{
+.planete-container{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
@@ -324,25 +317,26 @@ details[open] .open{
     margin-bottom: 40px;
 }
 
-.card-latest{
+.planete-latest{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
 }
 
-.card img {
-    width: 100%; /* Assurez-vous que les images occupent toute la largeur de la carte */
-    border-radius: 5px; /* Arrondissez les coins de l'image */
-    margin-bottom: 15px; /* Ajoutez un espace en bas de l'image */
+.planete img {
+    width: 340px; 
+    height: 200px;
+    border-radius: 5px; 
+    margin-bottom: 15px; 
 }
 
-.card h4 {
+.planete h2 {
     font-size: 1.2rem; /* Taille de la police du titre */
-    margin-bottom: 10px; /* Ajoutez un espace en bas du titre */
+    margin-bottom: 10px; 
 }
 
-.card p {
+.planete p {
     font-weight: 700;    
 }
 
@@ -363,6 +357,15 @@ details[open] .open{
     margin-top: 50px;
     margin: 0 auto;
 }
+
+.destinationpage h1{
+    font-family: 'Audiowide', sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+
+/* PAGE DU DETAIL DES ARTICLES  */
 
 .articlepage{
     display: flex;
@@ -390,6 +393,29 @@ details[open] .open{
     border-radius: 10px;
 }
 
+button, .button, button:hover, .button:hover{
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-family: 'Comfortaa', sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.article-info a{
+    text-decoration: none;
+    text-align: center;
+}
+
+button:hover, .button:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+/* PAGE DE LA RESERVATION  */
+
 .reservation-page{
     margin-top: 200px;
     margin-bottom: 200px;
@@ -405,7 +431,7 @@ details[open] .open{
     margin: 0 auto;
 }
 
-.reservation-page h3{
+.reservation-page h2{
     text-align: center;
     margin-bottom: 2rem;
     font-weight: 700;
@@ -428,6 +454,8 @@ details[open] .open{
     border-radius: 5px;
     border: 1px solid #ccc;
 }
+
+/* RECAPITULATIF  */
 
 .modal {
     display: none; 
@@ -494,4 +522,59 @@ text-align: center;
     color: red;
     margin-top: 250px;
     text-align: center;
+}
+
+/* PAGE A PROPOS  */
+
+.h1apropos {
+    font-family: 'Audiowide', sans-serif;
+    font-weight: bold;
+    font-size:  3rem;
+    margin-top: 11rem;
+    margin-bottom: 3rem; 
+    text-align: center;
+}
+
+.h2apropos {
+    font-family: 'Audiowide', sans-serif;
+    font-weight: bold;
+    font-size:  2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem; 
+    text-align: center;
+}
+
+.texteapropos {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 1.2rem;
+    padding-top: 1.8em;
+    width: 70%;
+    /* text-align: center; */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.texteapropos p {
+    margin-bottom: 4rem;
+}
+
+.texteapropos img{
+    float: right;
+    max-width: 400px;
+    max-height: 400px;
+}
+
+.mentions-legales {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 1rem;
+    padding-top: 1.8em;
+    width: 70%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10rem;
+}
+
+.mentions-legales p {
+    margin-bottom: 1.2em; /* Ajoute un espace entre les paragraphes */
 }
