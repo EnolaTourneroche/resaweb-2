@@ -58,6 +58,25 @@ if (!$article) {
                     <p><strong>Prix:</strong> <?php echo htmlspecialchars($article['prix']); ?>€</p>
                     <a href="reservation.php?id=<?php echo $article['article_ID']; ?>" class="button">Réserver</a>
                 </div>
+                
+<?php
+$current_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+$next_id = $current_id - 1;
+echo '<a href="article.php?id=' . $next_id . '">Article précédent</a>';
+?>
+
+                <?php
+$current_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+$next_id = $current_id + 1;
+echo '<a href="article.php?id=' . $next_id . '">Article suivant</a>';
+?>
+
+
+
+
+
+
+
             <div class="article-details">
                 <img src="images/<?php echo htmlspecialchars($article['image']); ?>" alt="<?php echo htmlspecialchars($article['nom_article']); ?>">
                 </div>

@@ -34,7 +34,7 @@ include 'connexion.php';
 
     <header>
         <div class="text">
-            <h1>SPATIAL TRAVEL</h1>
+            <h1>BRAVO LIWAN</h1>
             <h2>E x p l o r e z l ' e s p a c e</h2>
         </div>
     </header>
@@ -78,14 +78,14 @@ include 'connexion.php';
     </main>
 
     <footer>
-        <a href="mentions_legales.html" alt="Accéder aux mentions légales du site">Mentions Légales</a>
+        <a href="apropos.html#mentions-legales" alt="Accéder aux mentions légales du site">Mentions Légales</a>
         <a href="contacts.html" alt="Accéder à la page de contacts">Contacts</a>
         <a href="donnees_personnelles.html" alt="Accéder à la page des données personnelles">Données Personnelles</a>
         <a href="faq.html" alt="Accéder à la page de la FAQ">FAQ</a>
     </footer>
 
     <script>
-        // Slides
+        // Slider
 const nextBtn = document.querySelector(".next");
 const prevBtn = document.querySelector(".prev");
 const track = document.querySelector(".track");

@@ -47,6 +47,7 @@ nav {
     align-items: center;
     gap: 2rem;
     background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10000;
 }
 
 nav button{
@@ -326,7 +327,7 @@ details[open] .open{
 
 .planete img {
     width: 340px; 
-    height: 200px;
+    /* height: 200px; */
     border-radius: 5px; 
     margin-bottom: 15px; 
 }
@@ -535,11 +536,11 @@ text-align: center;
     text-align: center;
 }
 
-.h2apropos {
+.h3apropos {
     font-family: 'Audiowide', sans-serif;
     font-weight: bold;
     font-size:  2rem;
-    margin-top: 1rem;
+    margin-top: 7rem;
     margin-bottom: 1rem; 
     text-align: center;
 }
@@ -555,7 +556,11 @@ text-align: center;
 }
 
 .texteapropos p {
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
+}
+
+.texteapropos h2 {
+    font-size: 1.4rem;
 }
 
 .texteapropos img{
