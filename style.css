@@ -120,6 +120,7 @@ header{
 main{
     width: 80%;
     margin: 0 auto;
+    margin-bottom: 200px;
 }
 /* MON PIED DE PAGE  */
 footer {
@@ -326,8 +327,8 @@ details[open] .open{
 }
 
 .planete img {
-    width: 340px; 
-    /* height: 200px; */
+    height: 200px;
+    object-fit: contain;
     border-radius: 5px; 
     margin-bottom: 15px; 
 }
@@ -371,7 +372,7 @@ details[open] .open{
 .articlepage{
     display: flex;
     margin-top: 200px;
-    margin-bottom: 200px;
+    margin-bottom: 50px;
     width: 100%;
     gap: 5rem;
 }
@@ -413,6 +414,22 @@ button, .button, button:hover, .button:hover{
 button:hover, .button:hover{
     background-color: #fff;
     color: #000;
+}
+
+.liens-articles {
+    display: flex;
+    justify-content: space-around;  
+    width: 100%;
+}
+
+.lien-article {
+    color: white;
+    text-decoration: none;
+    width: 150px; 
+}
+
+.lien-article:visited {
+    color: white;
 }
 
 /* PAGE DE LA RESERVATION  */

@@ -38,50 +38,52 @@ if (!$article) {
 </head>
 
 <body>
-<nav>
+    <nav>
         <span class="name"><a href="index.php">SPACETRAVEL</a></span>
         <a href="index.php">Accueil</a>
         <a href="destinations.php">Les destinations</a>
         <a href="apropos.html">À propos de nous</a>
         <form action="destinations.php" method="GET" class="search-form">
-        <input type="text" name="search" placeholder="Rechercher une destination...">
-        <button type="submit">Rechercher</button>
-    </form>
+            <input type="text" name="search" placeholder="Rechercher une destination...">
+            <button type="submit">Rechercher</button>
+        </form>
     </nav>
 
     <div class="container">
-    <main>
-        <div class="articlepage">
-            <div class="article-info">
-            <h3><?php echo htmlspecialchars($article['nom_article']); ?></h3>
+        <main>
+            <div class="articlepage">
+                <div class="article-info">
+                    <h3><?php echo htmlspecialchars($article['nom_article']); ?></h3>
                     <p><strong>Description:</strong> <?php echo nl2br(htmlspecialchars($article['description'])); ?></p>
                     <p><strong>Prix:</strong> <?php echo htmlspecialchars($article['prix']); ?>€</p>
                     <a href="reservation.php?id=<?php echo $article['article_ID']; ?>" class="button">Réserver</a>
+                    <?php
+                $total_articles = 8;
+                $current_id = isset($_GET['id']) ? intval($_GET['id']) : 2;
+
+                $prev_id = $current_id - 1;
+                if ($prev_id < 2) {
+                    $prev_id = 9;
+                }
+
+                $next_id = $current_id + 1;
+                if ($next_id > 9) {
+                    $next_id = 2;
+                }
+
+                echo '<div class="liens-articles"><a href="article.php?id=' . $prev_id . '" class="lien-article">Article précédent</a>';
+                echo '<a href="article.php?id=' . $next_id . '" class="lien-article">Article suivant</a></div>';
+            ?>
                 </div>
-                
-<?php
-$current_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
-$next_id = $current_id - 1;
-echo '<a href="article.php?id=' . $next_id . '">Article précédent</a>';
-?>
 
-                <?php
-$current_id = isset($_GET['id']) ? intval($_GET['id']) : 0;
-$next_id = $current_id + 1;
-echo '<a href="article.php?id=' . $next_id . '">Article suivant</a>';
-?>
-
-
-
-
-
-
-
-            <div class="article-details">
-                <img src="images/<?php echo htmlspecialchars($article['image']); ?>" alt="<?php echo htmlspecialchars($article['nom_article']); ?>">
+                <div class="article-details">
+                    <img src="images/<?php echo htmlspecialchars($article['image']); ?>"
+                        alt="<?php echo htmlspecialchars($article['nom_article']); ?>">
                 </div>
+
             </div>
-    </main>
+            
+        </main>
     </div>
 
     <footer>

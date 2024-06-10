@@ -34,7 +34,7 @@ include 'connexion.php';
 
     <header>
         <div class="text">
-            <h1>BRAVO LIWAN</h1>
+            <h1>SPACE TRAVEL</h1>
             <h2>E x p l o r e z l ' e s p a c e</h2>
         </div>
     </header>
