@@ -31,8 +31,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $tel = $_POST['tel'];
     $date_debut = $_POST['date_debut'];
-    $date_fin = $_POST['date_fin'];
     $nb_personne = $_POST['nb_personne'];
+
+    // Convertir la date de début en objet DateTime
+    $start = new DateTime($date_debut);
+
+    // Ajouter la durée pour obtenir la date de fin
+    $duration = new DateInterval('P' . $article['duree'] . 'D');
+    $end = clone $start;
+    $end->add($duration);
+    $date_fin = $end->format('Y-m-d');
+
+    // Envoi des emails
+    $to = $email;
+    $subject = "Réservation de votre voyage Space Travel confirmée";
+    $message = "Félicitations ! Vous allez bientôt décoller pour un voyage dans l'espace ! Voici les détails de votre réservation:\n\n";
+    $message .= "Planète: " . $article['nom_article'] . "\n";
+    $message .= "Date de début: " . $date_debut . "\n";
+    $message .= "Date de fin: " . $date_fin . "\n";
+    $message .= "Durée: " . $article['duree'] . " jours\n";
+    $message .= "Prix du voyage: " . $article['prix'] . "€\n";
+    $headers = "From: spacetravel@contact.com";
+    mail($to, $subject, $message, $headers);
+
+    $to_admin = "etourneroche@gmail.com";
+    $subject_admin = "Nouvelle réservation de voyage";
+    $message_admin = "Une nouvelle réservation de voyage a été effectuée. Voici les détails de la réservation:\n\n";
+    $message_admin .= "Client: " . $email . "\n";
+    $message_admin .= "Planète: " . $article['nom_article'] . "\n";
+    $message_admin .= "Date de début: " . $date_debut . "\n";
+    $message_admin .= "Date de fin: " . $date_fin . "\n";
+    $message_admin .= "Durée: " . $article['duree'] . " jours\n";
+    $message_admin .= "Prix du voyage: " . $article['prix'] . "€\n";
+    $headers = "From: spacetravel@contact.com";
+    mail($to_admin, $subject_admin, $message_admin, $headers);
 
     // Insertion dans la base de données
     $insertQueryStr = "INSERT INTO reservation (nom, prenom, email, tel, date_debut, date_fin, nb_personne, article_ID) VALUES (:nom, :prenom, :email, :tel, :date_debut, :date_fin, :nb_personne, :article_ID)";
@@ -47,7 +79,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ':nb_personne' => $nb_personne,
         ':article_ID' => $articleId
     ]);
-
 
     if ($insertSuccess) {
         // Redirection vers la page de confirmation avec les détails de la réservation
@@ -68,7 +99,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>SPACE TRAVEL - Réservation</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -96,16 +128,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
 
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="azerty@mail.com" required>
+                <input type="email" id="email" name="email" placeholder="unebonnenotesvp@mail.com" required>
 
                 <label for="tel">Téléphone:</label>
                 <input type="text" id="tel" name="tel" placeholder="0601020304" required>
 
                 <label for="date_debut">Date de début:</label>
                 <input type="date" id="date_debut" name="date_debut" required>
-
-                <label for="date_fin">Date de fin:</label>
-                <input type="date" id="date_fin" name="date_fin" required>
 
                 <label for="nb_personne">Nombre de personnes:</label>
                 <input type="number" id="nb_personne" name="nb_personne" min="1" required>
@@ -128,7 +157,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    
 
     <footer>
-        <a href="mentions_legales.html" alt="Accéder aux mentions légales du site">Mentions Légales</a>
+        <a href="apropos.html#mentions-legales" alt="Accéder aux mentions légales du site">Mentions Légales</a>
         <a href="contacts.html" alt="Accéder à la page de contacts">Contacts</a>
         <a href="donnees_personnelles.html" alt="Accéder à la page des données personnelles">Données Personnelles</a>
         <a href="faq.html" alt="Accéder à la page de la FAQ">FAQ</a>
@@ -142,17 +171,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     var email = document.getElementById('email').value;
     var tel = document.getElementById('tel').value;
     var date_debut = document.getElementById('date_debut').value;
-    var date_fin = document.getElementById('date_fin').value;
     var nb_personne = parseInt(document.getElementById('nb_personne').value); // Convertir en nombre entier
-    var prixParJour = parseFloat(document.getElementById('prix').textContent);
+    var prixTotal = parseFloat(document.getElementById('prix').textContent);
 
-    // Calcul du nombre de jours entre la date de début et la date de fin
+    // Calcul de la date de fin et de la durée du voyage
     var debut = new Date(date_debut);
-    var fin = new Date(date_fin);
-    var difference = Math.abs(fin - debut);
-    var nbJours = Math.ceil(difference / (1000 * 3600 * 24)); // Conversion en jours et arrondi supérieur
-    var prixTotal = nb_personne * prixParJour * nbJours;
-    var prixTotalArrondi = prixTotal.toFixed(2); // Prix total avec deux décimales
+    var duree = <?php echo $article['duree']; ?>; // Durée de la base de données
+    var fin = new Date(debut);
+    fin.setDate(debut.getDate() + duree);
+    var date_fin = fin.toISOString().split('T')[0]; // Format AAAA-MM-JJ
 
     var recap = `
         <strong>Nom:</strong> ${nom} <br>
@@ -161,8 +188,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <strong>Téléphone:</strong> ${tel} <br>
         <strong>Date de début:</strong> ${date_debut} <br>
         <strong>Date de fin:</strong> ${date_fin} <br>
+        <strong>Durée du voyage:</strong> ${duree} jours<br>
         <strong>Nombre de personnes:</strong> ${nb_personne} <br>
-        <strong>Prix total:</strong> ${prixTotalArrondi} € <br>
+        <strong>Prix total:</strong> ${prixTotal} € <br>
     `;
 
     document.getElementById('recap').innerHTML = recap;
@@ -186,7 +214,6 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-
 </script>
 </body>
 

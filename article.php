@@ -34,7 +34,8 @@ if (!$article) {
     <title>SPACE TRAVEL - <?php echo htmlspecialchars($article['nom_article']); ?></title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -54,8 +55,11 @@ if (!$article) {
             <div class="articlepage">
                 <div class="article-info">
                     <h3><?php echo htmlspecialchars($article['nom_article']); ?></h3>
-                    <p><strong>Description:</strong> <?php echo nl2br(htmlspecialchars($article['description'])); ?></p>
-                    <p><strong>Prix:</strong> <?php echo htmlspecialchars($article['prix']); ?>€</p>
+                    <p><strong></strong> <?php echo nl2br(htmlspecialchars($article['description'])); ?></p>
+                    <div class="article-info-details">
+                        <p><strong>Prix:</strong> <?php echo htmlspecialchars($article['prix']); ?>€</p>
+                        <p><strong>Durée:</strong> <?php echo htmlspecialchars($article['duree']); ?> jours</p>
+                    </div>
                     <a href="reservation.php?id=<?php echo $article['article_ID']; ?>" class="button">Réserver</a>
                     <?php
                 $total_articles = 8;
@@ -77,7 +81,7 @@ if (!$article) {
                 </div>
 
                 <div class="article-details">
-                    <img src="images/<?php echo htmlspecialchars($article['image']); ?>"
+                    <img src="Images/<?php echo htmlspecialchars($article['image']); ?>"
                         alt="<?php echo htmlspecialchars($article['nom_article']); ?>">
                 </div>
 
@@ -87,7 +91,7 @@ if (!$article) {
     </div>
 
     <footer>
-        <a href="mentions_legales.html" alt="Accéder aux mentions légales du site">Mentions Légales</a>
+        <a href="apropos.html#mentions-legales" alt="Accéder aux mentions légales du site">Mentions Légales</a>
         <a href="contacts.html" alt="Accéder à la page de contacts">Contacts</a>
         <a href="donnees_personnelles.html" alt="Accéder à la page des données personnelles">Données Personnelles</a>
         <a href="faq.html" alt="Accéder à la page de la FAQ">FAQ</a>

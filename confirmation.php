@@ -25,7 +25,8 @@ $nb_personne = htmlspecialchars($_GET['nb_personne']);
     <title>Confirmation de Réservation</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 <body>
 <nav>
@@ -58,7 +59,7 @@ $nb_personne = htmlspecialchars($_GET['nb_personne']);
     </main>
 
     <footer>
-        <a href="mentions_legales.html" alt="Accéder aux mentions légales du site">Mentions Légales</a>
+        <a href="apropos.html#mentions-legales" alt="Accéder aux mentions légales du site">Mentions Légales</a>
         <a href="contacts.html" alt="Accéder à la page de contacts">Contacts</a>
         <a href="donnees_personnelles.html" alt="Accéder à la page des données personnelles">Données Personnelles</a>
         <a href="faq.html" alt="Accéder à la page de la FAQ">FAQ</a>

@@ -33,7 +33,8 @@ $destinations = $query->fetchAll(PDO::FETCH_ASSOC);
     <title>SPACE TRAVEL - Nos Destinations</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -67,7 +68,7 @@ $destinations = $query->fetchAll(PDO::FETCH_ASSOC);
                 } else {
                 foreach ($destinations as $destination) {
                     echo '<div class="planete">';
-                    echo '<img src="images/' . $destination['image'] . '" alt="' . $destination['nom_article'] . '">';
+                    echo '<img src="Images/' . $destination['image'] . '" alt="' . $destination['nom_article'] . '">';
                     echo '<h2>' . $destination['nom_article'] . '</h2>';
                     echo '<p>' . $destination['prix'] . '€</p>';
                     echo '<a href="article.php?id=' . $destination['article_ID'] . '" class="button">Détails</a>';
@@ -80,7 +81,7 @@ $destinations = $query->fetchAll(PDO::FETCH_ASSOC);
     </main>
     </div>
     <footer>
-        <a href="mentions_legales.html" alt="Accéder aux mentions légales du site">Mentions Légales</a>
+        <a href="apropos.html#mentions-legales" alt="Accéder aux mentions légales du site">Mentions Légales</a>
         <a href="contacts.html" alt="Accéder à la page de contacts">Contacts</a>
         <a href="donnees_personnelles.html" alt="Accéder à la page des données personnelles">Données Personnelles</a>
         <a href="faq.html" alt="Accéder à la page de la FAQ">FAQ</a>

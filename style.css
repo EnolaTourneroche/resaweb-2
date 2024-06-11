@@ -15,7 +15,9 @@ body {
     color: #fff;
     display: flex;
     flex-direction: column;
-    font-family: 'Comfortaa', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 200;
+    letter-spacing: 1px;
 }
 
 .presentation {
@@ -27,6 +29,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     font-size: 1.5rem;
+    font-weight: 100;
 }
 
 .espace {
@@ -120,8 +123,8 @@ header{
 main{
     width: 80%;
     margin: 0 auto;
-    margin-bottom: 200px;
 }
+
 /* MON PIED DE PAGE  */
 footer {
     background-color: #000;
@@ -129,18 +132,23 @@ footer {
     padding: 10px;
     width: 100%;
     z-index: 999;
+    margin-top: 5rem;
 }
 
 footer a {
     color: #fff;
     text-decoration: none;
     margin: 0 20px;
-    font-family: 'Comfortaa', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 200px;
+    letter-spacing: 1px;
 }
 
 /* PAGE DES DONNEES PERSONNELLES  */
 .donnees_persos {
-    font-family: 'Comfortaa', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 200px;
+    letter-spacing: 1px;
     margin-top: 150px !important; /* Pour pas que ça passe sous la navbar */
     margin: auto;
     width: 80%; /* Pour que ça prenne pas toute la largeur */
@@ -216,7 +224,9 @@ summary{
 }
 
 details[open] p {
-    font-family: 'Comfortaa', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 200px;
+    letter-spacing: 1px;
     font-size: 1rem;
     padding-top: 2em;
 }
@@ -249,15 +259,15 @@ details[open] .open{
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    margin-top: 90px;
-    margin-bottom: 90px;
+    margin-top: 150px;
+    margin-bottom: 60px;
     text-align: center;
     gap: 1.5rem;
 }
 
 .carousel {
     position: relative;
-    width: 40%; 
+    width: 50%; 
     margin: 0 auto;
     overflow: hidden;
   }
@@ -288,8 +298,8 @@ details[open] .open{
 }
 
   .destinations-carousel .slide img {
-    max-width: 100%;
-    height: auto;
+    height: 275px;
+    object-fit: contain;
     z-index: -1;
   }
 
@@ -358,6 +368,8 @@ details[open] .open{
     width: 90%;
     margin-top: 50px;
     margin: 0 auto;
+    font-size: 1.2rem;
+    font-weight: 200;
 }
 
 .destinationpage h1{
@@ -375,12 +387,22 @@ details[open] .open{
     margin-bottom: 50px;
     width: 100%;
     gap: 5rem;
+    font-size: 1.2rem;
 }
 
 .article-info{
     width: 50%;
     display: flex;
     flex-direction: column;
+    gap: 3rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+
+.article-info-details {
+    display: flex;
+    justify-content: flex-start;
     gap: 3rem;
 }
 
@@ -401,7 +423,7 @@ button, .button, button:hover, .button:hover{
     border: 2px solid #fff;
     padding: 10px 20px;
     font-size: 1rem;
-    font-family: 'Comfortaa', sans-serif;
+    font-family: 'Oswald', sans-serif;
     cursor: pointer;
     text-decoration: none;
 }
@@ -557,19 +579,22 @@ text-align: center;
     font-family: 'Audiowide', sans-serif;
     font-weight: bold;
     font-size:  2rem;
-    margin-top: 7rem;
-    margin-bottom: 1rem; 
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem; 
     text-align: center;
 }
 
 .texteapropos {
-    font-family: 'Comfortaa', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 1.2rem;
+    font-weight: 200;
+    letter-spacing: 1px;
     padding-top: 1.8em;
     width: 70%;
     /* text-align: center; */
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 8rem;
 }
 
 .texteapropos p {
@@ -580,23 +605,56 @@ text-align: center;
     font-size: 1.4rem;
 }
 
-.texteapropos img{
+.astronaute{
     float: right;
     max-width: 400px;
     max-height: 400px;
 }
 
 .mentions-legales {
-    font-family: 'Comfortaa', sans-serif;
-    font-size: 1rem;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
     padding-top: 1.8em;
+    letter-spacing: 1px;
+    font-weight: 200;
     width: 70%;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 10rem;
 }
 
 .mentions-legales p {
     margin-bottom: 1.2em; /* Ajoute un espace entre les paragraphes */
 }
+
+/* -----------------------------------SKIPLINK------------------------------------ */
+
+.skip-link {
+    background-color: #ffffff;
+    border: solid 3px rgb(0, 0, 0);
+    padding: 0.4em 0.5em;
+    text-decoration: none;
+  }
+
+  .skip-link:not(:focus):not(:active) {
+    border: 0;
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  .skip-link:focus {
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 999;
+    color: red;
+  }
+
+  /* -----------------------------------SKIPLINK------------------------------------ */

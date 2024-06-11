@@ -16,12 +16,14 @@ include 'connexion.php';
     <title>SPACE TRAVEL</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
     <nav>
+        <a href="#main" class="skip-link">Aller au contenu</a>
         <span class="name"><a href="index.php">SPACETRAVEL</a></span>
         <a href="index.php">Accueil</a>
         <a href="destinations.php">Les destinations</a>
@@ -39,7 +41,7 @@ include 'connexion.php';
         </div>
     </header>
 
-    <main>
+    <main role="main" id="main" tabindex="-1">
         <div class="presentation">
             <h3>Visitez tous les recoins de notre système solaire !</h3>
             <br class="espace">
@@ -61,7 +63,7 @@ include 'connexion.php';
                     <?php
                     foreach ($destinations as $destination) {
                         echo '<div class="slide">';
-                        echo '<img src="images/' . $destination['image'] . '" alt="' . $destination['nom_article'] . '">';
+                        echo '<img src="Images/' . $destination['image'] . '" alt="' . $destination['nom_article'] . '">';
                         echo '<h4>' . $destination['nom_article'] . '</h4>';
                         echo '<p>' . $destination['prix'] . '€</p>';
                         echo '<a href="article.php?id=' . $destination['article_ID'] . '" class="button">Détails</a>';
