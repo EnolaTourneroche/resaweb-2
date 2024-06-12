@@ -29,9 +29,9 @@ include 'connexion.php';
         <a href="destinations.php">Les destinations</a>
         <a href="apropos.html">À propos de nous</a>
         <form action="destinations.php" method="GET" class="search-form">
-        <input type="text" name="search" placeholder="Rechercher une destination...">
-        <button type="submit">Rechercher</button>
-    </form>
+            <input type="text" name="search" placeholder="Rechercher une destination...">
+            <button type="submit">Rechercher</button>
+        </form>
     </nav>
 
     <header>
@@ -55,28 +55,35 @@ include 'connexion.php';
         </div>
 
 
-        <!-- Carte des destinations -->
-        <section class="destinations-carousel">
-            <h3>Nos dernières destinations</h3>
-            <div class="carousel">
-                <div class="track">
-                    <?php
-                    foreach ($destinations as $destination) {
-                        echo '<div class="slide">';
-                        echo '<img src="Images/' . $destination['image'] . '" alt="' . $destination['nom_article'] . '">';
-                        echo '<h4>' . $destination['nom_article'] . '</h4>';
-                        echo '<p>' . $destination['prix'] . '€</p>';
-                        echo '<a href="article.php?id=' . $destination['article_ID'] . '" class="button">Détails</a>';
-                        echo '</div>';
+        <!-- Slider des destinations -->
+        <div class="items">
+            <?php
+                foreach ($destinations as $index => $destination) {
+                    $class = '';
+                    if ($index === 0) {
+                        $class = 'active';
+                    } elseif ($index === 1) {
+                        $class = 'next';
+                    } elseif ($index === count($destinations) - 1) {
+                        $class = 'prev';
                     }
-                    ?>
-                </div>
-                <div class="navigation">
-                <button class="prev">&#8592;</button>
-                <button class="next">&#8594;</button>
-                </div>
-            </div>
-        </section>
+                    echo '<div class="item ' . $class . '">';
+                    echo '<img src="Images/' . $destination['image'] . '" alt="' . $destination['nom_article'] . '">';
+                    echo '<div class="item-details">';
+                    echo '<h2>' . $destination['nom_article'] . '</h2>';
+                    echo '<p>' . $destination['prix'] . '€</p>';
+                    echo '<a href="article.php?id=' . $destination['article_ID'] . '" class="button">Détails</a>';
+                    echo '</div>';
+                    echo '</div>';
+                }
+            ?>
+        </div>
+
+
+
+
+
+
     </main>
 
     <footer>
@@ -86,34 +93,7 @@ include 'connexion.php';
         <a href="faq.html" alt="Accéder à la page de la FAQ">FAQ</a>
     </footer>
 
-    <script>
-        // Slider
-const nextBtn = document.querySelector(".next");
-const prevBtn = document.querySelector(".prev");
-const track = document.querySelector(".track");
-
-const NUM_SLIDES = 5; 
-
-let currSlide = 0;
-
-function slideTrack() {
-  track.style.transform = `translateX(${-currSlide * 100}%)`;
-}
-
-nextBtn.addEventListener("click", () => {
-  currSlide = (currSlide + 1) % NUM_SLIDES;
-  slideTrack();
-});
-
-prevBtn.addEventListener("click", () => {
-  currSlide = (currSlide - 1 + NUM_SLIDES) % NUM_SLIDES;
-  slideTrack();
-});
-
-function submitForm() {
-  document.querySelector("form").submit();
-}
-    </script>
+    <script src="slider.js"></script>
 </body>
 
 </html>
