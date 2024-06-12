@@ -128,7 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
 
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="unebonnenotesvp@mail.com" required>
+                <input type="email" id="email" name="email" placeholder="ledevcestdur@mail.com" required>
 
                 <label for="tel">Téléphone:</label>
                 <input type="text" id="tel" name="tel" placeholder="0601020304" required>

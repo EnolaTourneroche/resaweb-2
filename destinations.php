@@ -57,7 +57,7 @@ $destinations = $query->fetchAll(PDO::FETCH_ASSOC);
                 <button id="ascButton">Prix Croissant</button>
                 <button id="descButton">Prix Décroissant</button>
             </div>
-        </div>
+</div>
 
         <!-- Liste des destinations -->
         <section class="destinations-container">

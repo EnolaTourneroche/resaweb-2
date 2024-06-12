@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
     <!-- <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <title>Nous contacter</title>
+    <title>SPACE TRAVEL - Contact</title>
 </head>
 
 <body>
@@ -17,14 +18,42 @@
         <a href="destinations.php">Les destinations</a>
         <a href="apropos.html">À propos de nous</a>
         <form action="destinations.php" method="GET" class="search-form">
-        <input type="text" name="search" placeholder="Rechercher une destination...">
-        <button type="submit">Rechercher</button>
-    </form>
+            <input type="text" name="search" placeholder="Rechercher une destination...">
+            <button type="submit">Rechercher</button>
+        </form>
     </nav>
 
-    <h1>Nous contacter</h1>
+    <form class="contact-form">
+        <fieldset class="contact-container">
+            <legend> Laissez-nous vous éclairer ! </legend>
+            <h2>Tous les champs marqués d'une * sont obligatoires.</h2>
+            <p>
+                <label for="Nom"> Nom <span class="star-required">*</span> </label>
+                <input type="text" name="nom" id="idNom" placeholder="Charpentier">
+            </p>
 
-    
+            <p>
+                <label for="Prenom"> Prénom <span class="star-required">*</span> </label>
+                <input type="text" name="prenom" id="idPrenom" placeholder="Gaëlle">
+            </p>
+
+            <p>
+                <label for="Message"> En quoi pouvons-nous vous aider ? <span class="star-required">*</span> </label>
+                <input type="text" name="demande" id="idDemande"
+                    placeholder="Une bonne note pour mon joli resaweb fonctionnel ? ">
+            </p>
+
+            <p>
+                <label for="Email">Email <span class="star-required">*</span> </label>
+                <input type="email" name="email" id="Email" placeholder="bonnenotesiouplai@gmail.com">
+            </p>
+
+            <p>
+                <input type="button" class="Valider" value="Valider">
+            </p>
+        </fieldset>
+    </form>
+    </div>
 
 
 
@@ -38,4 +67,5 @@
         <a href="faq.html" alt="Accéder à la page de la FAQ">FAQ</a>
     </footer>
 </body>
+
 </html>

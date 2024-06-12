@@ -43,16 +43,23 @@ include 'connexion.php';
 
     <main role="main" id="main" tabindex="-1">
         <div class="presentation">
+            <hr>
             <h3>Visitez tous les recoins de notre système solaire !</h3>
+            <hr>
             <br class="espace">
             <p>
-                Spatial Travel est la seule agence de voyage à vous proposer des destinations hors de la Terre ! Avec
+                Space Travel est la seule agence de voyage à vous proposer des destinations hors de la Terre ! Avec
                 nous vous pourrez observer au plus près les planètes de notre système solaire mais vous pourrez aussi
                 vous approcher des plus belles étoiles telles que Sirius ou Canopus ! Et bien sûr les satellites de
                 notre système solaire ne sont pas laissés sans reste et la Lune, ou Callisto n'auront plus de secrets
                 pour vous !
             </p>
+             <hr>
+        <h4 class="slidertitle">Nos dernières destinations</h4>
+        <hr>
         </div>
+ 
+       
 
 
         <!-- Slider des destinations -->

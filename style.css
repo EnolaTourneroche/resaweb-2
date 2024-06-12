@@ -20,22 +20,6 @@ body {
     letter-spacing: 1px;
 }
 
-.presentation {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    width: 80%;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 1.5rem;
-    font-weight: 100;
-}
-
-.espace {
-    height : 10px
-}
-
 /*Je design ma barre menu en appelant l'html que j'ai créé pour ça avec son id navbar*/
 nav {
     position: fixed;
@@ -125,7 +109,45 @@ main{
     margin: 0 auto;
 }
 
-/* MON PIED DE PAGE  */
+
+.presentation {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+
+.presentation h3{
+    padding: 1rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.presentation p{
+    text-align: left;
+    margin-bottom: 180px;
+}
+
+.espace {
+    height : 10px
+}
+
+.slidertitle{
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 1rem;
+}
+
+
+
+/* -------------------------------MON PIED DE PAGE--------------------------  */
 footer {
     background-color: #000;
     text-align: center;
@@ -144,7 +166,9 @@ footer a {
     letter-spacing: 1px;
 }
 
-/* PAGE DES DONNEES PERSONNELLES  */
+
+
+/* --------------------------------PAGE DES DONNEES PERSONNELLES------------------  */
 .donnees_persos {
     font-family: 'Oswald', sans-serif;
     font-weight: 200px;
@@ -187,7 +211,7 @@ footer a {
     list-style-type: none; 
 }
 
-/* PAGE DE LA FAQ */
+/* --------------------------------PAGE DE LA FAQ------------------------------- */
 details {
     width: 50rem;
     background: black;
@@ -252,7 +276,7 @@ details[open] .open{
     text-align: center;
 }
 
-/* SLIDER DE LA PAGE D'ACCUEIL  */
+/* ---------------------------SLIDER DE LA PAGE D'ACCUEIL----------------------  */
 .items {
     position: relative;
     width: 100%;
@@ -313,7 +337,7 @@ details[open] .open{
 
 }
 
-/* PAGE DES DESTINATIONS */
+/* -----------------------------------------PAGE DES DESTINATIONS----------------------------- */
 
 .planete {
     width: 350px; 
@@ -326,6 +350,22 @@ details[open] .open{
     text-align: center;
 }
 
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+    50% {
+        transform: translatey(-10px);
+    }
+    100% {
+        transform: translatey(0px);
+    }
+}
+
+.planete img:hover {
+    animation:float 2s ease-in-out infinite; 
+}
+
 .planete a{
     text-decoration: none;
     color: white;
@@ -334,7 +374,7 @@ details[open] .open{
 .planete-container{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
+    /* gap: 5rem; */
     margin-top: 40px;
     margin-bottom: 40px;
 }
@@ -343,7 +383,7 @@ details[open] .open{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    /* gap: 2rem; */
 }
 
 .planete img {
@@ -367,7 +407,7 @@ details[open] .open{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     margin-top: 150px;
 }
 
@@ -389,7 +429,7 @@ details[open] .open{
 }
 
 
-/* PAGE DU DETAIL DES ARTICLES  */
+/* ---------------------------------PAGE DU DETAIL DES ARTICLES -------------------------------------- */
 
 .articlepage{
     display: flex;
@@ -424,7 +464,10 @@ details[open] .open{
 
 .article-details img{
     width: 90%;
-    border-radius: 10px;
+    }
+
+.article-details img{
+    animation:float 5s ease-in-out infinite; 
 }
 
 button, .button, button:hover, .button:hover{
@@ -464,7 +507,7 @@ button:hover, .button:hover{
     color: white;
 }
 
-/* PAGE DE LA RESERVATION  */
+/* ------------------------------------PAGE DE LA RESERVATION---------------------------  */
 
 .reservation-page{
     margin-top: 200px;
@@ -505,7 +548,7 @@ button:hover, .button:hover{
     border: 1px solid #ccc;
 }
 
-/* RECAPITULATIF  */
+/* -------------------------------------------------RECAPITULATIF-------------------------------  */
 
 .modal {
     display: none; 
@@ -574,7 +617,7 @@ text-align: center;
     text-align: center;
 }
 
-/* PAGE A PROPOS  */
+/* ---------------------------------------PAGE A PROPOS----------------------------------  */
 
 .h1apropos {
     font-family: 'Audiowide', sans-serif;
@@ -669,10 +712,8 @@ text-align: center;
 
   
 
-  /* -----------------------------------SKIPLINK------------------------------------ */
+  /* -----------------------------------MEDIA QUERIES------------------------------------ */
 
-
-  /* Media Queries */
 @media (768px < width < 1200px) {
     .items {
         height: 250px;
@@ -697,4 +738,67 @@ text-align: center;
     .item.next {
         transform: translate(85%, -50%);
     }
+}
+
+
+/* ----------------------------------------PAGE CONTACT ---------------------*/
+
+.contact-form {
+    scroll-snap-align: center;
+    margin-top: 150px;
+}
+
+.contact-container {
+    padding: 20px;
+    max-width: 40%;
+    margin: auto;
+    margin-bottom: 0;
+    background-color: black;
+    font-family:'Audiowide', sans-serif;
+    color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 1px 0 20px black;
+    
+}
+
+.contact-container legend{
+    font-family: 'Audiowide', 'sans-serif';
+    color: #C2862A;
+    font-size:2rem;
+}
+
+.contact-container h2 {
+    font-family: 'Oswald', 'sans-serif';
+    font-size: small;
+    margin-bottom: 12px;
+    font-weight: 150;
+}
+
+.contact-container label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.contact-container input {
+    width: 80%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.Valider {
+    color: #C2862A;
+    background-color: black;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Oswald', 'sans-serif';
+    margin-top: 10px;
+    border: solid 2px #C2862A;
+}
+
+.Valider:hover {
+    background-color: #C2862A;
+    color: black;
 }
