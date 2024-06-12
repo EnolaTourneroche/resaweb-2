@@ -17,7 +17,7 @@ include 'connexion.php';
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="Images/favicon.png"/>
+    <link rel="shortcut icon" href="Images/favicon.png" />
 </head>
 
 <body>
@@ -29,7 +29,7 @@ include 'connexion.php';
         <a href="apropos.html">À propos</a>
         <form action="destinations.php" method="GET" class="search-form">
             <input type="text" name="search" placeholder="Rechercher une destination...">
-            <button type="submit">SEARCH</button>
+            <input type="submit" value="SEARCH">
         </form>
     </nav>
 
@@ -53,13 +53,10 @@ include 'connexion.php';
                 notre système solaire ne sont pas laissés sans reste et la Lune, ou Callisto n'auront plus de secrets
                 pour vous !
             </p>
-             <hr>
-        <h4 class="slidertitle">Nos dernières destinations</h4>
-        <hr>
+            <hr>
+            <h4 class="slidertitle">Nos dernières destinations</h4>
+            <hr>
         </div>
- 
-       
-
 
         <!-- Slider des destinations -->
         <div class="items">
@@ -84,12 +81,6 @@ include 'connexion.php';
                 }
             ?>
         </div>
-
-
-
-
-
-
     </main>
 
     <footer>

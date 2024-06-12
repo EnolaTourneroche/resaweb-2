@@ -100,61 +100,61 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="Images/favicon.png"/>
+    <link rel="shortcut icon" href="Images/favicon.png" />
 </head>
 
 <body>
-<nav>
+    <nav>
         <span class="name"><a href="index.php">SPACETRAVEL</a></span>
         <a href="index.php">Accueil</a>
         <a href="destinations.php">Les destinations</a>
         <a href="apropos.html">À propos</a>
         <form action="destinations.php" method="GET" class="search-form">
-        <input type="text" name="search" placeholder="Rechercher une destination...">
-        <button type="submit">SEARCH</button>
-    </form>
+            <input type="text" name="search" placeholder="Rechercher une destination...">
+            <button type="submit">SEARCH</button>
+        </form>
     </nav>
-<div class="container">
-    <main>
-        <div class="reservation-page">
-        <div class="reservation-container">
-            <h2>Réserver: <?php echo htmlspecialchars($article['nom_article']); ?></h2>
-            <form action="reservation.php?id=<?php echo $articleId; ?>" method="POST">
-            <span id="prix"><?php echo htmlspecialchars($article['prix']); ?></span>
-                <label for="nom">Nom:</label>
-                <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+    <div class="container">
+        <main>
+            <div class="reservation-page">
+                <div class="reservation-container">
+                    <h2>Réserver: <?php echo htmlspecialchars($article['nom_article']); ?></h2>
+                    <form action="reservation.php?id=<?php echo $articleId; ?>" method="POST">
+                        <span id="prix"><?php echo htmlspecialchars($article['prix']); ?></span>
+                        <label for="nom">Nom:</label>
+                        <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
 
-                <label for="prenom">Prénom:</label>
-                <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+                        <label for="prenom">Prénom:</label>
+                        <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="ledevcestdur@mail.com" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="ledevcestdur@mail.com" required>
 
-                <label for="tel">Téléphone:</label>
-                <input type="text" id="tel" name="tel" placeholder="0601020304" required>
+                        <label for="tel">Téléphone:</label>
+                        <input type="text" id="tel" name="tel" placeholder="0601020304" required>
 
-                <label for="date_debut">Date de début:</label>
-                <input type="date" id="date_debut" name="date_debut" required>
+                        <label for="date_debut">Date de début:</label>
+                        <input type="date" id="date_debut" name="date_debut" required>
 
-                <label for="nb_personne">Nombre de personnes:</label>
-                <input type="number" id="nb_personne" name="nb_personne" min="1" required>
+                        <label for="nb_personne">Nombre de personnes:</label>
+                        <input type="number" id="nb_personne" name="nb_personne" min="1" required>
 
-                <button type="button" onclick="openModal()">Voir le récapitulatif</button>
-                <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>Récapitulatif de la réservation</h3>
-            <p id="recap">
-            </p>
-            <button onclick="submitForm()">Confirmer la réservation</button>
-        </div>
+                        <button type="button" onclick="openModal()">Voir le récapitulatif</button>
+                        <div id="myModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <h3>Récapitulatif de la réservation</h3>
+                                <p id="recap">
+                                </p>
+                                <button onclick="submitForm()">Confirmer la réservation</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
     </div>
-            </form>
-        </div>
-        </div>
-    </main>
-</div>
-   
+
 
     <footer>
         <a href="apropos.html#mentions-legales" alt="Accéder aux mentions légales du site">Mentions Légales</a>
@@ -164,24 +164,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </footer>
 
 
-<script>
+    <script>
     function openModal() {
-    var nom = document.getElementById('nom').value;
-    var prenom = document.getElementById('prenom').value;
-    var email = document.getElementById('email').value;
-    var tel = document.getElementById('tel').value;
-    var date_debut = document.getElementById('date_debut').value;
-    var nb_personne = parseInt(document.getElementById('nb_personne').value); // Convertir en nombre entier
-    var prixTotal = parseFloat(document.getElementById('prix').textContent);
+        var nom = document.getElementById('nom').value;
+        var prenom = document.getElementById('prenom').value;
+        var email = document.getElementById('email').value;
+        var tel = document.getElementById('tel').value;
+        var date_debut = document.getElementById('date_debut').value;
+        var nb_personne = parseInt(document.getElementById('nb_personne').value); // Convertir en nombre entier
+        var prixTotal = parseFloat(document.getElementById('prix').textContent);
 
-    // Calcul de la date de fin et de la durée du voyage
-    var debut = new Date(date_debut);
-    var duree = <?php echo $article['duree']; ?>; // Durée de la base de données
-    var fin = new Date(debut);
-    fin.setDate(debut.getDate() + duree);
-    var date_fin = fin.toISOString().split('T')[0]; // Format AAAA-MM-JJ
+        // Calcul de la date de fin et de la durée du voyage
+        var debut = new Date(date_debut);
+        var duree = <?php echo $article['duree']; ?>; // Durée de la base de données
+        var fin = new Date(debut);
+        fin.setDate(debut.getDate() + duree);
+        var date_fin = fin.toISOString().split('T')[0]; // Format AAAA-MM-JJ
 
-    var recap = `
+        var recap = `
         <strong>Nom:</strong> ${nom} <br>
         <strong>Prénom:</strong> ${prenom} <br>
         <strong>Email:</strong> ${email} <br>
@@ -193,28 +193,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <strong>Prix total:</strong> ${prixTotal} € <br>
     `;
 
-    document.getElementById('recap').innerHTML = recap;
+        document.getElementById('recap').innerHTML = recap;
 
-    // Affichage de la fenêtre modale
-    var modal = document.getElementById('myModal');
-    modal.style.display = "block";
-}
+        // Affichage de la fenêtre modale
+        var modal = document.getElementById('myModal');
+        modal.style.display = "block";
+    }
 
-// Fonction pour fermer la fenêtre modale
-var span = document.getElementsByClassName("close")[0];
-span.onclick = function() {
-    var modal = document.getElementById('myModal');
-    modal.style.display = "none";
-}
-
-// Fonction pour fermer la fenêtre modale en cliquant à l'extérieur
-window.onclick = function(event) {
-    var modal = document.getElementById('myModal');
-    if (event.target == modal) {
+    // Fonction pour fermer la fenêtre modale
+    var span = document.getElementsByClassName("close")[0];
+    span.onclick = function() {
+        var modal = document.getElementById('myModal');
         modal.style.display = "none";
     }
-}
-</script>
+
+    // Fonction pour fermer la fenêtre modale en cliquant à l'extérieur
+    window.onclick = function(event) {
+        var modal = document.getElementById('myModal');
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+    <script src="email.js"></script>
 </body>
 
 </html>
