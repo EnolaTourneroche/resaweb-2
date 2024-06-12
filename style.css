@@ -70,9 +70,54 @@ nav a {
 }
 
 a:hover {
-    text-decoration: underline;
+    /* text-decoration: underline; */
+    color: #507999;
 }
 
+/* ------------------------------------------------------- */
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-form input[type="text"] {
+    padding: 10px 10px;
+    font-size: 0.6rem;
+    border: 2px solid #fff; 
+    background-color: #000; 
+    color: #fff; 
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.search-form input[type="text"]::placeholder {
+    color: white; 
+    font-family: 'Oswald', sans-serif;
+}
+
+.search-form button {
+    padding: 10px 10px;
+    font-size: 0.6rem;
+    font-family: 'Audiowide', sans-serif;
+    font-weight: 200;
+    border: 2px solid #fff; 
+    background-color: white; 
+    color: black; 
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: white; 
+    color: black; 
+    font-family: 'Audiowide', sans-serif;
+    font-weight: 200;
+    padding: 11px 11px;
+    border-radius: 5px 5px 5px 5px;
+    font-size: 0.7rem;
+}
+
+/* -------------------------------------------------------------- */
 header{
     width: 100vw;
     height: 100vh;
@@ -117,7 +162,6 @@ main{
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 30px;
     font-size: 1.5rem;
     font-weight: 100;
 }
@@ -130,7 +174,8 @@ main{
 
 .presentation p{
     text-align: left;
-    margin-bottom: 180px;
+    margin-bottom: 150px;
+    margin-top: 40px;
 }
 
 .espace {
@@ -473,8 +518,9 @@ details[open] .open{
 button, .button, button:hover, .button:hover{
     background-color: #000;
     color: #fff;
-    border: 2px solid #fff;
-    padding: 10px 20px;
+    border: 1px solid #fff;
+    border-radius: 25px;
+    padding: 15px 10px;
     font-size: 1rem;
     font-family: 'Oswald', sans-serif;
     cursor: pointer;
@@ -499,8 +545,15 @@ button:hover, .button:hover{
 
 .lien-article {
     color: white;
-    text-decoration: none;
+    /* text-decoration: none; */
     width: 150px; 
+    font-family: 'Audiowide', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.liens-articles:hover{
+    text-decoration: underline;
 }
 
 .lien-article:visited {
@@ -758,13 +811,22 @@ text-align: center;
     color: #ffffff;
     border-radius: 20px;
     box-shadow: 1px 0 20px black;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
     
+}
+
+.contact-container div {
+    width: 70%;
 }
 
 .contact-container legend{
     font-family: 'Audiowide', 'sans-serif';
-    color: #C2862A;
-    font-size:2rem;
+    color: #BD721D;
+    text-align: center;
+    font-size: 2rem;
 }
 
 .contact-container h2 {
@@ -779,26 +841,27 @@ text-align: center;
     margin-bottom: 8px;
 }
 
-.contact-container input {
-    width: 80%;
+.contact-container input:not([type="button"]) {
+    width: 100%;
     padding: 8px;
     margin-bottom: 10px;
     box-sizing: border-box;
 }
 
 .Valider {
-    color: #C2862A;
+    color: #BD721D;
     background-color: black;
-    padding: 14px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     font-family: 'Oswald', 'sans-serif';
+    font-size: 1rem;
     margin-top: 10px;
-    border: solid 2px #C2862A;
+    border: solid 2px #BD721D;
+    padding: 0.5rem 2rem;
 }
 
 .Valider:hover {
-    background-color: #C2862A;
+    background-color: #BD721D;
     color: black;
 }

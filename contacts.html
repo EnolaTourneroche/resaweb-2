@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <title>SPACE TRAVEL - Contact</title>
+    <link rel="shortcut icon" href="Images/favicon.png"/>
+    <title>SPACE TRAVEL - Contactez-nous</title>
 </head>
 
 <body>
@@ -16,10 +16,10 @@
         <span class="name"><a href="index.php">SPACETRAVEL</a></span>
         <a href="index.php">Accueil</a>
         <a href="destinations.php">Les destinations</a>
-        <a href="apropos.html">À propos de nous</a>
+        <a href="apropos.html">À propos</a>
         <form action="destinations.php" method="GET" class="search-form">
             <input type="text" name="search" placeholder="Rechercher une destination...">
-            <button type="submit">Rechercher</button>
+            <button type="submit">SEARCH</button>
         </form>
     </nav>
 
@@ -27,33 +27,30 @@
         <fieldset class="contact-container">
             <legend> Laissez-nous vous éclairer ! </legend>
             <h2>Tous les champs marqués d'une * sont obligatoires.</h2>
-            <p>
-                <label for="Nom"> Nom <span class="star-required">*</span> </label>
-                <input type="text" name="nom" id="idNom" placeholder="Charpentier">
-            </p>
+                <div>
+                    <label for="idNom"> Nom <span class="star-required">*</span> </label>
+                    <input type="text" name="nom" id="idNom" placeholder="Charpentier">
+                </div>
 
-            <p>
-                <label for="Prenom"> Prénom <span class="star-required">*</span> </label>
-                <input type="text" name="prenom" id="idPrenom" placeholder="Gaëlle">
-            </p>
+                <div>
+                    <label for="idPrenom"> Prénom <span class="star-required">*</span> </label>
+                    <input type="text" name="prenom" id="idPrenom" placeholder="Gaëlle">
+                </div>
 
-            <p>
-                <label for="Message"> En quoi pouvons-nous vous aider ? <span class="star-required">*</span> </label>
-                <input type="text" name="demande" id="idDemande"
-                    placeholder="Une bonne note pour mon joli resaweb fonctionnel ? ">
-            </p>
+                <div>
+                    <label for="idDemande"> En quoi pouvons-nous vous aider ? <span class="star-required">*</span> </label>
+                    <input type="text" name="demande" id="idDemande"
+                        placeholder="Une bonne note pour mon joli resaweb fonctionnel ? ">
+                </div>
 
-            <p>
-                <label for="Email">Email <span class="star-required">*</span> </label>
-                <input type="email" name="email" id="Email" placeholder="bonnenotesiouplai@gmail.com">
-            </p>
+                <div>
+                    <label for="Email">Email <span class="star-required">*</span> </label>
+                    <input type="email" name="email" id="Email" placeholder="bonnenotesiouplai@gmail.com">
+                </div>
 
-            <p>
                 <input type="button" class="Valider" value="Valider">
-            </p>
         </fieldset>
     </form>
-    </div>
 
 
 

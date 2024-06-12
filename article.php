@@ -34,8 +34,8 @@ if (!$article) {
     <title>SPACE TRAVEL - <?php echo htmlspecialchars($article['nom_article']); ?></title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="Images/favicon.png"/>
 </head>
 
 <body>
@@ -43,10 +43,10 @@ if (!$article) {
         <span class="name"><a href="index.php">SPACETRAVEL</a></span>
         <a href="index.php">Accueil</a>
         <a href="destinations.php">Les destinations</a>
-        <a href="apropos.html">À propos de nous</a>
+        <a href="apropos.html">À propos</a>
         <form action="destinations.php" method="GET" class="search-form">
             <input type="text" name="search" placeholder="Rechercher une destination...">
-            <button type="submit">Rechercher</button>
+            <button type="submit">SEARCH</button>
         </form>
     </nav>
 
